@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+
+// Importar módulos de rotas
+const professoresRoutes = require('./professores');
+const alunosRoutes = require('./alunos');
+
+// Configuração das rotas principais
+app.use('/professores', professoresRoutes);
+app.use('/alunos', alunosRoutes);
+
+// Configuração do servidor
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
